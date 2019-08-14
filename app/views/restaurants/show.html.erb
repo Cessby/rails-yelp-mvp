@@ -1,5 +1,6 @@
-
-<h1><%= @restaurant.name %> 😋</h1>
+  <div class="text-center">
+    <h1><%= @restaurant.name %> 😋</h1>
+  </div>
 <hr>
 
   <p> <strong>Food-type : </strong> <%= @restaurant.category %> </p>
@@ -24,3 +25,4 @@
 <div class="mt-4">
   <%= link_to "Back to list", restaurants_path, class: "btn btn-primary" %>
 </div>
+
