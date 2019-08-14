@@ -5,10 +5,7 @@ class RestaurantsController < ApplicationController
 
   def show          # GET /restaurants/:id
     @restaurant = Restaurant.find(params[:id])
-  end
-
-  def new           # GET /restaurants/new
-    @restaurant = Restaurant.new
+    @review = Review.new
   end
 
   def create        # POST /restaurants
@@ -22,18 +19,6 @@ class RestaurantsController < ApplicationController
 
   def edit          # GET /restaurants/:id/edit
     @restaurant = Restaurant.find(params[:id])
-  end
-
-  def update
-    @restaurant = Restaurant.find(params[:id])
-    @restaurant.update(restaurant_params)
-    redirect_to restaurant_path(@restaurant)
-  end
-
-  def destroy       # DELETE /restaurants/:id
-    @restaurant = Restaurant.find(params[:id])
-    @restaurant.destroy
-    redirect_to restaurants_path
   end
 
   private
