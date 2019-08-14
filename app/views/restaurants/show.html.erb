@@ -11,7 +11,13 @@
   </div>
 
   <div class="d-flex justify-content-beetween mt-4">
-    <h2> Reviews </h2>
+    <h2> Reviews -&nbsp; </h2>
+      <% stars = "⭐️" %>
+      <% count = 0 %>
+      <% @restaurant.reviews.each do |review| %>
+      <% count += review.rating %>
+      <% end %>
+    <h3> <%= (count.fdiv(@restaurant.reviews.length)).round(1) %> <%= stars * (count / @restaurant.reviews.length) %></h3>
   </div>
 
 

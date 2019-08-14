@@ -8,6 +8,10 @@ class RestaurantsController < ApplicationController
     @review = Review.new
   end
 
+  def new           # GET /restaurants/new
+    @restaurant = Restaurant.new
+  end
+
   def create        # POST /restaurants
     @restaurant = Restaurant.new(restaurant_params)
     if @restaurant.save
@@ -15,10 +19,6 @@ class RestaurantsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def edit          # GET /restaurants/:id/edit
-    @restaurant = Restaurant.find(params[:id])
   end
 
   private
